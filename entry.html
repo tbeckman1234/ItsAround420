@@ -79,47 +79,72 @@
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="business">Business:</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" ng-model="name" placeholder="Enter business name">
+                    <input type="text" class="form-control" id="nameInput" ng-model="name" placeholder="Enter business name">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="address">Address:</label>
                   <div class="col-sm-10">          
-                    <input type="text" class="form-control" id="address" ng-model="address" placeholder="Enter address">
+                    <input type="text" class="form-control" id="addressInput" ng-model="address" placeholder="Enter address">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="phone">Phone Number:</label>
                   <div class="col-sm-10">          
-                    <input type="text" class="form-control" id="phone" ng-model="phone" placeholder="Enter phone number">
+                    <input type="text" class="form-control" id="phoneInput" ng-model="phone" placeholder="Enter phone number">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="email">Email:</label>
                   <div class="col-sm-10">          
-                    <input type="text" class="form-control" id="email" ng-model="email" placeholder="Enter email">
+                    <input type="text" class="form-control" id="emailInput" ng-model="email" placeholder="Enter email">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="website">Website:</label>
                   <div class="col-sm-10">          
-                    <input type="text" class="form-control" id="website" ng-model="website" placeholder="Enter website">
+                    <input type="text" class="form-control" id="websiteInput" ng-model="website" placeholder="Enter website">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="description" class="control-label col-sm-2">Business description:</label>
                   <div class="col-sm-10">
-                  <textarea class="form-control" rows="5" id="description" name="description" ng-model="description" placeholder="Enter business description"></textarea>
+                  <textarea class="form-control" rows="5" id="descriptionInput" name="description" ng-model="description" placeholder="Enter business description"></textarea>
             	</div>
                 <div class="form-group">        
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" ng-click="addBusiness($event)" class="btn btn-default">Submit</button>
                   </div>
                 </div>
               </form>
         
         </div>
      </div>
+     
+     <div class="container">
+      	<ul class="directory-businesses-business" id="directory-businesses">
+        	<h3>Dispensaries <i class="fa fa-medkit"></i></h3>
+      		<li>
+            	<h4 ng-repeat="name in businesses"><strong class="directory-businesses-business">{{business.name}}</strong></h4>
+                <p>{{business.address}}</p>
+                <p>{{business.phone}}</p>
+            </li>
+      
+            <h3>Hotels <i class="fa fa-hotel"></i></h3>
+      		<li>
+            	<h4>Business Title</h4>
+                <p>12345 address street, Ontario, OR 92840</p>
+                <p>208-998-9385</p>
+            </li>
+            
+            <h3>More <i class="fa fa-plus-circle"></i></h3>
+      		<li>
+            	<h4>Business Title</h4>
+                <p>12345 address street, Ontario, OR 92840</p>
+                <p>208-998-9385</p>
+            </li>
+        </ul>
+      </div>
     
     <footer class="footer">
       <div class="container">
